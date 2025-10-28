@@ -1,0 +1,29 @@
+<!--
+- Author: Zhang Junkai
+- Date: 28th October 
+- Copyright Notice: nil
+- Description: Lets the user select their modules
+ -->
+
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Module Form</title>
+<script src="https://cdn.tailwindcss.com"></script>
+</head>
+<body class="flex flex-col p-6">
+	<h1 class="text-xl font-semibold">Prac 3 - Part 1</h1>
+	<span class="mb-4">Select your modules:</span>
+	<form action="checkModules.jsp" method="post">
+		<input type="checkbox" name="checkbox1" value="WRPG">&nbsp;WPRG<br />
+		<input type="checkbox" name="checkbox2" value="JRPG">&nbsp;JPRG<br />
+		<input type="checkbox" name="checkbox3" value="JSPG">&nbsp;JSPG<br />
+		<input type="checkbox" name="checkbox4" value="DBMS">&nbsp;DBMS<br />
+		<div class="flex flex-row gap-2 mt-2">
+			<button type="submit" class="bg-neutral-200 rounded-md px-2 py-1">Submit</button>
+			<button type="reset" class="bg-neutral-200 rounded-md px-2 py-1">Clear</button>
+		</div>
+	</form>
+</body>
+</html>
