@@ -12,6 +12,7 @@
 <head>
 <meta charset="UTF-8">
 <title>Insert title here</title>
+<!-- Used tailwindcss for styling for quicker prototyping -->
 <script src="https://cdn.tailwindcss.com"></script>
 </head>
 <body>

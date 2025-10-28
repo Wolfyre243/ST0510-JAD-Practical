@@ -16,12 +16,15 @@
 <body>
 <div>
 	<%
-	String correctUser = "Lincoln";
-	String correctPassword = "abc123";
+	// Set correct credentials
+	final String correctUser = "Lincoln";
+	final String correctPassword = "abc123";
 	
-	String errRedirectURL = "login.jsp?errCode=invalidLogin";
-	String successRedirectURL = "multiplication.jsp";
+	// Set redirect URLs
+	final String errRedirectURL = "login.jsp?errCode=invalidLogin";
+	final String successRedirectURL = "multiplication.jsp";
 	
+	// Retrieve login creds
 	String userId = request.getParameter("loginid");
 	String password = request.getParameter("password");
 

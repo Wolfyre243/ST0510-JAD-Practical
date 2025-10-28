@@ -9,6 +9,7 @@
 </head>
 <body>
 <%
+// Retrieve number from th request parameters
 int num = Integer.parseInt(request.getParameter("multipleNum"));
 %>
 <h1 class="text-xl mb-4">Multiplication Table of <%= num %></h1>

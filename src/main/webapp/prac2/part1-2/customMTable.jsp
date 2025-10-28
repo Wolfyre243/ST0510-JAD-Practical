@@ -7,6 +7,7 @@
 <title>Insert title here</title>
 </head>
 <body>
+<!-- Redirect to display table page -->
 <form action="displayMTable.jsp" method="post">
 	<div>
 		<label>Enter a number:</label>
