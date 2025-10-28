@@ -9,10 +9,11 @@
 <html>
 <head>
 <meta charset="UTF-8">
-<title>Insert title here</title>
+<title>Login</title>
 </head>
 <body>
-<form action="../verifyUser.jsp" method="post">
+
+<form action="verifyUser.jsp" method="post">
 	<div>
 		<label>Login ID:</label>
 		<input type='text' name='loginid' />
@@ -25,5 +26,17 @@
 		<button type='submit' name='btnSubmit' value='Login'>Login</button>
 	</div>
 </form>
+
+<div>
+<%
+String errCode = request.getParameter("errCode");
+
+if ("invalidLogin".equals(errCode)) {
+	out.print("You have entered an invalid ID/Password.");
+}
+	
+%>
+</div>
+
 </body>
 </html>

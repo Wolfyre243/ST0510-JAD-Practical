@@ -11,7 +11,7 @@
 <html>
 <head>
 <meta charset="UTF-8">
-<title>Insert title here</title>
+<title>Verify User</title>
 </head>
 <body>
 <div>
@@ -19,13 +19,16 @@
 	String correctUser = "Lincoln";
 	String correctPassword = "abc123";
 	
-	String errRedirectURL = "login.html?errCode=invalidLogin";
+	String errRedirectURL = "login.jsp?errCode=invalidLogin";
+	String successRedirectURL = "multiplication.jsp";
 	
 	String userId = request.getParameter("loginid");
 	String password = request.getParameter("password");
 
-	if (correctUser != userId || correctPassword != password) {
+	if (!correctUser.equals(userId) || !correctPassword.equals(password)) {
 		response.sendRedirect(errRedirectURL);
+	} else {
+		response.sendRedirect(successRedirectURL);
 	}
 	
 	%>
