@@ -36,4 +36,34 @@ public class Member {
 		stmt.close();
 		return members.toArray(new Member[0]);
 	}
+	
+	public static Member getById(int id) throws SQLException {
+		Connection conn = JDBC.connect();
+		String sql = "SELECT * FROM member WHERE id = ?";
+		PreparedStatement stmt = conn.prepareStatement(sql);
+		stmt.setInt(1, id);
+		ResultSet rs = stmt.executeQuery();
+		Member member = null;
+		if (rs.next()) {
+			String name = rs.getString("name");
+			member = new Member(id, name);
+		}
+		rs.close();
+		stmt.close();
+		return member;
+	}
+	
+	public static int updateMember(int id, String newName) throws SQLException {
+		Connection conn = JDBC.connect();
+		String sql = "UPDATE member SET name = ? WHERE id = ?";
+		PreparedStatement stmt = conn.prepareStatement(sql);
+		stmt.setString(1, newName);
+		stmt.setInt(2, id);
+		int affectedRows = stmt.executeUpdate();
+		stmt.close();
+		
+		// Return rows affected to ensure update was successful
+		return affectedRows;
+	}
+	
 }
