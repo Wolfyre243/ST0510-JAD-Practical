@@ -12,11 +12,11 @@ public class Member {
 		this.id = id;
 		this.name = name;
 	}
-	
+
 	public int getId() {
 		return this.id;
 	}
-	
+
 	public String getName() {
 		return this.name;
 	}
@@ -34,6 +34,6 @@ public class Member {
 		}
 		rs.close();
 		stmt.close();
-		return members.toArray(new Member[0]); 
+		return members.toArray(new Member[0]);
 	}
 }
