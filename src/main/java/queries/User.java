@@ -4,16 +4,26 @@ import java.sql.*;
 import db.JDBC;
 
 public class User {
+	private int userId;
 	private String loginId;
 	private String password;
+	private String userRole;
 
-	public User(String loginId, String password) {
+	public User(Integer userId, String loginId, String password, String userRole) {
 		this.loginId = loginId;
 		this.password = password;
 	}
 
 	public String getLoginId() {
 		return this.loginId;
+	}
+	
+	public int getUserId() {
+		return this.userId;
+	}
+	
+	public String getUserRole() {
+		return this.userRole;
 	}
 
 	public Boolean checkPassword(String pw) {
@@ -28,8 +38,11 @@ public class User {
 		ResultSet rs = stmt.executeQuery();
 		User user = null;
 		if (rs.next()) {
+			int userId = rs.getInt("userId");
 			String password = rs.getString("password");
-			user = new User(loginId, password);
+			String userRole = rs.getString("userRole");
+			
+			user = new User(userId, loginId, password, userRole);
 		}
 		rs.close();
 		stmt.close();
