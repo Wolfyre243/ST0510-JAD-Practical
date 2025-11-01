@@ -10,10 +10,12 @@ public class User {
 	private String userRole;
 
 	public User(Integer userId, String loginId, String password, String userRole) {
+		this.userId = userId;
 		this.loginId = loginId;
 		this.password = password;
+		this.userRole = userRole;
 	}
-
+	
 	public String getLoginId() {
 		return this.loginId;
 	}
@@ -38,12 +40,13 @@ public class User {
 		ResultSet rs = stmt.executeQuery();
 		User user = null;
 		if (rs.next()) {
-			int userId = rs.getInt("userId");
+			int userId = rs.getInt("user_id");
 			String password = rs.getString("password");
-			String userRole = rs.getString("userRole");
+			String userRole = rs.getString("user_role");
 			
 			user = new User(userId, loginId, password, userRole);
 		}
+		
 		rs.close();
 		stmt.close();
 		return user;
